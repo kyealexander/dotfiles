@@ -8,3 +8,9 @@ alias ls="exa -al --color=always --group-directories-first"
 alias ll="exa -l --color=always --group-directories-first"
 alias la="exa -a --color=always --group-directories-first"
 alias lt="exa -lTa --color=always --group-directories-first"
+
+set -gx PATH $PATH ~/.local/bin
+
+if test -e ~/.cache/wal/colors.fish
+	source ~/.cache/wal/colors.fish
+end

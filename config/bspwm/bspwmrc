@@ -10,9 +10,8 @@ bspc monitor -d I II III IV V
 bspc config border_width		2
 bspc config window_gap			10
 bspc config split_ratio			0.5
-bspc config focused_border_color	"#5E81AC"
-bspc config normal_border_color		"#4C566A"
-
+bspc config focused_border_color	"$(cat ~/.cache/wal/colors | sed -n '3p')"
+bspc config normal_border_color		"$(cat ~/.cache/wal/colors | sed -n '1p')"
 
 # Ensure layout is tiled
 bspc config automatic_scheme longest_side
@@ -22,11 +21,17 @@ bspc config removal_adjustment true
 # Set Wallpaper
 feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg &
 
+# Gernerate color theme
+wal -i ~/Pictures/wallpapers/wallpaper.jpg &
+
 # Picom
 picom --config ~/.config/picom/picom.conf &
 
-# Launch Polybar before terminal
-~/.config/polybar/launch.sh & 
+# Launch Polybar
+~/.config/polybar/launch.sh &
+
+# Clipbard Manager
+diodon &
 
 # Launch terminal
 kitty &
