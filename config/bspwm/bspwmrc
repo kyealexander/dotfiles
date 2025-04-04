@@ -13,13 +13,17 @@ bspc config split_ratio			0.5
 bspc config focused_border_color	"#5E81AC"
 bspc config normal_border_color		"#4C566A"
 
+
 # Ensure layout is tiled
 bspc config automatic_scheme longest_side
 bspc config initial_polarity first_child
 bspc config removal_adjustment true
 
 # Set Wallpaper
-feh --bg-fill ~/Pictures/wallpapers/noctyra.png &
+feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg &
+
+# Picom
+picom --config ~/.config/picom/picom.conf &
 
 # Launch Polybar before terminal
 ~/.config/polybar/launch.sh & 
